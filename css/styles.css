@@ -41,10 +41,28 @@ a.current:link, a.current:visited {
 	font-weight: 500;
 }
 
-p {
+/* Paragraph Styles */
+.bodyText {
 	margin: 1.5rem 0;
 	line-height: 1.6rem;
 }
+
+.bold {
+	font-weight: 500;
+	font-size: 0.8rem;
+	color: #339966;
+	line-height: 1.0rem;
+	margin: 0.2rem 0 0 0;
+}
+
+.light {
+	font-weight: 300;
+	font-size: 0.8rem;
+	color: #000000;
+	line-height: 1.0rem;
+	margin: 0.3rem 0 0 0;
+}
+
 
 .circle {
 	border-radius: 50%;
@@ -143,19 +161,21 @@ p {
 	align-items: center;
 	/* background-color: red; 
 	border: 1px solid black; */
-	width: 10em;
-	margin: 1em;
+	width: 10rem;
+	height: auto;
+	margin: 1rem;
 }
 
 .items > img {
 	/* border: 1px solid #339966; */
+	width: 80%;
+	height: auto;
 }
 
 .itemTitle {
 	width: 85%;
-	margin: 0.5em 0 0 0;
-	text-align: center;
-	font-size: 0.8em;
+	margin: 0.5rem 0 0 0;
+	text-align: left;
 }
 
 /* Mobile */
