@@ -55,12 +55,31 @@
 
 /* Full-size CSS */
 
+/* Element Styling */
+
 body {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	font-size: 1rem;
 	letter-spacing: 0.03rem;
 }
+
+a {
+	color: #339966;
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: circle;
+}
+
+ul li {
+	margin: 1rem 0 0 2rem;
+
+}
+
+
+/* General Styles */
 
 .black {
 	color: #000000;
@@ -92,6 +111,10 @@ body {
 
 .small {
 	font-size: 1.0rem;
+}
+
+.tiny {
+	font-size: 0.8rem;
 }
 
 .inline {
@@ -126,6 +149,10 @@ body {
 	margin-top: 1.5rem;
 }
 
+.m-02t {
+	margin-top: 0.2rem;
+}
+
 .m-r {
 	margin-right: 2rem;
 }
@@ -138,43 +165,23 @@ body {
 	line-height: 1.4rem;
 }
 
-a {
-	color: #339966;
-	text-decoration: none;
-}
-
-/* Paragraph Styles */
-/*
-.bodyText {
-	margin: 1.5rem 0;
-	line-height: 1.6rem;
-}
-*/
-
-.bold {
-	font-weight: 500;
-	font-size: 0.8rem;
-	color: #339966;
-	line-height: 1.0rem;
-	margin: 0.2rem 0 0 0;
-}
-
-.light {
-	font-weight: 300;
-	font-size: 0.8rem;
-	color: #000000;
-	line-height: 1.0rem;
-	margin: 0.3rem 0 0 0;
-}
-
 
 .circle {
 	border-radius: 50%;
 }
 
 
-.flexWrapper {
+/* Overall Flex CSS */
+
+.flex {
 	display: flex;
+}
+
+.flexCenter {
+	align-items: center;
+}
+
+.wrapper {
 	flex-direction: column;
 	margin: 4rem auto;
 	max-width: 90%;
@@ -182,20 +189,18 @@ a {
 	justify-content: space-around;
 }
 
+
+/* Header Styles */
+
 .flexHeader {
 	display: flex;
 	align-items: center
-}
-
-.profile {
-	/* border: 1px solid black;*/
 }
 
 .headerRight {
 	flex-direction: column;
 	margin: 0 1.5rem;
 }
-
 
 #spacer {
 	display: inline;
@@ -219,14 +224,6 @@ a {
 	opacity: 1;
 }
 
-ul {
-	list-style-type: circle;
-}
-
-ul li {
-	margin: 1rem 0 0 2rem;
-
-}
 
 .nav ul {
 	margin: 0.8rem 0 0 0;
@@ -241,9 +238,8 @@ ul li {
 	margin: 0 0.5rem;
 }
 
-.nav a {
-	/* transition: all 0.4s; */
-}
+
+/* Content Styles */
 
 .Content {
 	max-width: 60%;
@@ -260,8 +256,7 @@ ul li {
 	max-width: 50%
 }
 
-.flexWork {
-	/* width: 40rem; */
+.flexContent {
 	max-width: 80%;
 	margin: 1rem 0;
 	display: flex;
@@ -273,15 +268,12 @@ ul li {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	/* background-color: red; 
-	border: 1px solid black; */
 	width: 10rem;
 	height: auto;
 	margin: 1rem;
 }
 
 .items > img {
-	/* border: 1px solid #339966; */
 	width: 85%;
 	height: auto;
 }
@@ -302,13 +294,20 @@ ul li {
 }
 
 .workItems > img {
-	border: 1px solid lightgray;
+	border: 1px solid #969696;
 	border-radius: 4px;
 	height: auto;
 }
 
+
+
 /* Mobile */
+
 @media screen and (max-width: 580px) {
+	.wrapper {
+		margin: 1rem auto;
+	}
+
 	.flexHeader {
 		flex-direction: column;
 		justify-content: center;
@@ -356,8 +355,18 @@ ul li {
 		margin: 1.2rem 0;
 	}
 
-	.flexContent {
-		margin: 0.8rem 0;
-		width: 90%;
+	.introText {
+		min-width: 90%;
+		margin: 0.5rem;
 	}
+
+	.Content, .flexContent {
+		margin: 0.8rem 0;
+		min-width: 95%;
+	}
+
+	.items > img {
+	width: 100%;
+	height: auto;
+}
 }
