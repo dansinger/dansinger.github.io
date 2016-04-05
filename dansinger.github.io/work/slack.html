@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dan Singer: Designer, Researcher</title>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:100,300,300italic,500' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="../css/styles.css">
+
+	</head>
+
+	<body>
+			<div class="flexWrapper">
+				<div class="flexHeader">
+					<a href="../index.html">
+						<img src="../images/profile.jpg" height="100" width="100" class="circle profile">
+					</a>
+					<div class="headerRight">
+						<div class="heading">
+								<h1 class="large medium black inline"><a href="../index.html" class="black">Dan Singer</a></h1>
+								<div id="spacer">
+									//
+								</div>
+								<div class="social inline">
+									<a target="_blank" href="http://twitter.com/singerde"><img src="https://dansinger.github.io/images/twitter.png"></a>
+									<a target="_blank" href="https://www.linkedin.com/in/dan-singer-0a117a32"><img src="https://dansinger.github.io/images/linkedin.png"></a>
+								</div>
+						</div>
+						<div class="nav">
+							<ul>
+								<li><a href="../work/index.html" class="heavy">MY WORK</a></li>
+								<li><a href="../books/index.html">READING</a></li>
+								<li><a href="mailto:singerde1@gmail.com">EMAIL ME</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="Content">
+					<h2 class="large heavy m-2t">Cutting through the noise with Slack To Do's</h2>
+
+					<p class="spaced14 m-15t">I’ve been using Slack for a couple years, at work and with a several Philly community groups. Not only is a beautiful team communication app, but it’s also a lot of fun. Enjoying time spent working with colleagues across offices and time zones is no small win. As enjoyable as the giphy, reactions, and homemade Bob Ross bots are, it creates some hairy situations. After being away for Slack for a 30 minute meeting, it starts to look something like this:</p>
+					<div class="fullwidth m-15t"><img src="../images/slack_mock1.png" class="max100 m-auto block" alt="A mock-up of a slack window showing several notification flags on different teams, channels, and direct messages." title="Slack Mock with Notifications"/></div>
+					<p class="spaced14 m-15t">I have to go through those @mentions, @channel messages, and direct messages to see what I need to take action on. On more than one occasion, paralysis in the sea of red and white dots has caused me to miss or delay the delivery of work. I’ve heard from team members who missed important messages and GitHub pull requests that required their attention because “they can’t keep up” with busy channels, were work chat is tangled up with chat chat. And when you’re keeping up, that feels right. When you’re not, you’re stuck.</p>
+
+					<h3 class="regular heavy m-2t">Problem Statement</h3>
+
+					<p class="spaced14 m-15t">Slack relies on users to distinguish between notifications that require their attention or action and those that do not.</p>
+					<p class="spaced14 m-15t">For a user of Slack in a medium to large company (100+ employees) to “be less busy” and limit the need for email, as offered by Slack’s promotional materials, the app needs to offer a way to create a hierarchy of alerts.</p>
+
+					<h3 class="regular heavy m-2t">Review Process</h3>
+
+					<p class="spaced14 m-15t">The first thing I did was review Slack was already doing to address this issue: </p>
+					<ul>
+						<li class="spaced14">Slack’s <strong class="heavy">Notification preferences</strong> are fairly robust, offering users the opportunity to customize what notifications come from particular teams and channels, in addition to adjusting what types of “mentions” actually send alerts (e.g., @dan, Dan, Daniel). Even with a minimal notification scheme, these cannot separate out key information from the rest.</li>
+						<li class="spaced14"><strong class="heavy">Do Not Disturb mode</strong> prevents any notifications to your system over periods of time, but does nothing to reduce these. Slackbot, Slack’s personable bot/servant, kindly greets you afterwords with only a count of how many things you’ve missed (ironically adding another notification to the pile).</li>
+						<li class="spaced14">The <strong class="heavy">Show Activity</strong> sidebar acts as a diary of your notifications. However, mixed in with critical mentions are emoji reactions to yours posts. If the quantity of these notifications is high, critical things can still get lost. There’s no indication that you’ve missed something: how often should a user scroll back through there?</li>
+						<li class="spaced14"><strong class="heavy">Pinned Items</strong> offer anyone in a channel the opportunity to “pin” any particular post to that channel’s sidebar. These items are however hidden by two clicks and therefore are not well remembered or maintained.</li>
+						<li class="spaced14"><strong class="heavy">Separate channels</strong> may be a partial solution for this problem, as there is no limit to the number of channels a team could create. A team could create a room for chat and a room for work, but this can both interrupt the flow of congenial work as well as provide more visual noise to the left of the messages pane.</li>
+					<p class="spaced14 m-15t">Next, I created a simplified in-app sitemap to illustrate the levels of architecture at which critical information is and could be indicated through notifications.</p>
+					<div class="fullwidth m-15t"><img src="../images/slack_notify_sitemap.png" class="max100 m-auto block" alt="Simplified in-app sitemap with notification locations" title="In-app Sitemap"/></div>
+					<p class="spaced14 m-15t">Then, I reviewed what other chat apps were doing. Many apps with chat functionality keep notifications minimal and sorted into semantically-meaningful inboxes. Snapchat (pictured below) has three high-level inboxes where users are alerted to new content through colorful blocks: 1.) Personal messages to the left, 2.) Settings to the top, and 3.) Public stories to the right. Likewise, Facebook and Instagram store all notifications in a single menu bar.</p>
+					<div class="floatLeft m-r m-15t"><img src="../images/snapchat_interface.png" alt="Depiction of Snapchat&#39;s three inboxes for new information" title="Snapchat interface"/></div>
+					<p class="spaced14 m-15t">Though apps like these are somewhat simpler than Slack, in that users can only publish a limited set of information, <strong class="heavy">their consistent use of space allows users to create a mental model of where important information will reside.</strong> In <em>The Design of Everyday Things</em>, Don Norman notes that through repeated use, users form a compelling conceptual model of how controls affect the overall operation of something (21). With so many locations for notifications and limited differentiation between them, users are unable to form that compelling model for where to find information when they need it. </p>
+					<p class="spaced14 m-15t">With this information, I finally began sketching possible solutions using pen and paper and then in higher fidelity using Sketch.</p>
+
+					<h3 class="regular heavy m-2t">Solution</h3>
+
+					<p class="spaced14 m-15t">Is the solution here to <a href="https://medium.com/better-people/slack-i-m-breaking-up-with-you-54600ace03ea#.5rrumlw6q" title="&quot;Slack, I&#39;m Breaking Up with You&quot; on Medium">abandon Slack altogether</a>? That’s throwing the baby out with the bathwater. Slack is becoming ubiquitous in the tech space, and that’s not for nothing. It does an excellent job, but could do better at helping users sort through the noise. With that in mind, I’ve sketched out one potential solution: To Do’s.</p>
+					<div class="fullwidth m-15t"><img src="../images/slack_todo1.png" class="max100 m-auto block" title="To Do's" alt="Sample of To Do for announcements"/></div>
+					<p class="spaced14 m-15t">To Do’s are a message type, like Snippets and Posts, but offer notification schemes separate from @mentions. They have a single confirmation step for a set audience, and will track who has completed them for transparency and accountability.</p>
+					<p class="spaced14">They are composed of three components: Audience, Message, Confirmation. <strong class="heavy">Audience</strong> defines who needs to complete a To Do. It encourages the use of relevant user-created groups, an existing Slack feature, as you can only pass in one argument such as a channel or group. <strong class="heavy">Message</strong> is the content of the message. It should be short and to the point. <strong class="heavy">Confirmation</strong> will display as the task they have to complete, such as “Confirm reviewed PR.” </p>
+					<div class="fullWidth m-15t"><img src="../images/slack_todo3.png" class="max100 m-auto block" title="To Do's" alt="Sample of To Do for reviewing"/></div>
+					<p class="spaced14 m-15t">When there are outstanding To Do’s in a channel, a small green notification, matching the confirmation highlight, appears on the “Show Channel Details” icon. This creates a consistent space for the most important details on the team.</p>
+					<div class="fullWidth m-15t"><img src="../images/slack_notify1.png" class="max100 m-auto block" title="Notification" alt="Sample of outstanding notification"/></div>
+					<p class="spaced14 m-15t">To help users remain on top of their To Do’s, our friendly neighborhood Slackbot will post them each morning, or at different intervals customized by the user.</p>
+					<div class="fullWidth m-15t"><img src="../images/slack_slackbot1.png" class="max100 m-auto block" title="Slackbot Messages" alt="A daily reminder from slackbot"/></div>
+					<p class="spaced14 m-15t">Further functionality could include making preset custom commands for To Do’s, such as <code>/announce</code> and <code>/review</code> that rely on preset templates.</p>
+					<div class="fullWidth"><img src="../images/slack_todo500.gif" class="max100 m-auto block" title="Custom To Do's" alt="Animation showing custom To Do feature"/></div>
+
+					<h3 class="regular heavy m-2t">Conclusion & Next Steps</h3>
+
+					<p class="spaced14 m-15t">This solution continues Slack's effort to offer tools to help teams make positive change in their culture. The attempt is to embrace for the messy flow of work, with its chat and gifs and tangents, while still allowing teams to commit to getting meaningful work done. It says that it's okay to unplug from Slack for a day: you know you'll be able to see what you've missed.</p>
+					<p class="spaced14 m-15t">To build out this sketched solution, it would be necessary to get in front of real teams. Some time spent understanding how current users keep track of their tasks would be worthwhile. Can To Do's fit into that space? While it would be possible to show these high-fidelity sketches for visual design feedback, the input would not be as valuable as demonstrating the effectiveness in context. A prototype could be made with a Slack app, or by leveraging an existing integration that pushes to something like Trello or Basecamp. It would be most useful to measure the adoption of the To Do's: what is the response rate? Do people simply ignore them?</p> 
+				</div>
+
+				<div class="flexFooter">
+					<div class="social">
+						<a target="_blank" href="http://twitter.com/singerde"><img src="https://dansinger.github.io/images/twitter.png"></a>
+						<a target="_blank" href="https://www.linkedin.com/in/dan-singer-0a117a32"><img src="https://dansinger.github.io/images/linkedin.png"></a>
+					</div>
+				</div>
+			</div>
+	</body>
+
+</html>
